@@ -7,7 +7,7 @@ var numberChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', ';', ':', '"', '', ',', '<', '.', '>', '/', '?'];
 
-function generatePasswordChars(){
+function generatePassword(){
 
 howManyChars =  parseInt(
   prompt('How many charactors would you like the pasword to be?'),
@@ -26,7 +26,7 @@ if(
   alert('Must make at least one selection from proceeding prompt.')
   return null;
 } else {
-  alert('Your password will not include ')
+  alert('Your password will not include')
 }
 var hasSpecChars = confirm('Please click on OK to confirm inclusion of special characters.');
 
@@ -53,7 +53,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-function generateBtn(){
-  }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
