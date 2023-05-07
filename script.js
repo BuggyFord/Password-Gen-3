@@ -19,15 +19,13 @@ if (howManyChars < 8 || howManyChars > 128) {
   return null;
 }
 
-
 if( 
   hasSpecChars === false && hasLowerLetters === false && hasUpperLetters === false && hasNumbers === false
 ) {
   alert('Must make at least one selection from proceeding prompt.')
   return null;
-} else {
-  alert('Your password will not include')
-}
+} else 
+
 var hasSpecChars = confirm('Please click on OK to confirm inclusion of special characters.');
 
 var hasLowerLetters = confirm('Please click on Ok to confirm inclusion of lowercased letters.')
@@ -35,6 +33,17 @@ var hasLowerLetters = confirm('Please click on Ok to confirm inclusion of lowerc
 var hasUpperLetters = confirm('Please click on OK to confirm inclusion of uppercased letters.')
 
 var hasNumbers = confirm('Please click on Ok to confirm inclusion of numbers.')
+
+
+var password = ""
+
+for (var i =0; i < howManyChars; i++) {
+  var index = Math.floor(Math.random() * userSelect.length)
+
+  var chosenChars = userSelect[index]
+  password += chosenChars
+}
+return password
 }
 
 
