@@ -7,12 +7,34 @@ var numberChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 var specialChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', ';', ':', '"', '', ',', '<', '.', '>', '/', '?'];
 
-function generateBtn(){
+function generatePasswordChars(){
 
-howManyChars = prompt('How many charactors would you like the pasword to be?');
+howManyChars =  parseInt(
+  prompt('How many charactors would you like the pasword to be?'),
+  10
+);
 
-if (howManyChars < 8 || > 128) {
-  return
+if (howManyChars < 8 || howManyChars > 128) {
+  alert( 'Password must be between 8-128 characters, please select between those values.');
+  return null;
+}
+
+
+if( 
+  hasSpecChars === false && hasLowerLetters === false && hasUpperLetters === false && hasNumbers === false
+) {
+  alert('Must make at least one selection from proceeding prompt.')
+  return null;
+} else {
+  alert('Your password will not include ')
+}
+var hasSpecChars = confirm('Please click on OK to confirm inclusion of special characters.');
+
+var hasLowerLetters = confirm('Please click on Ok to confirm inclusion of lowercased letters.')
+
+var hasUpperLetters = confirm('Please click on OK to confirm inclusion of uppercased letters.')
+
+var hasNumbers = confirm('Please click on Ok to confirm inclusion of numbers.')
 }
 
 
@@ -21,8 +43,6 @@ if (howManyChars < 8 || > 128) {
 
 
 
-
-}
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -33,6 +53,7 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+function generateBtn(){
+  }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
